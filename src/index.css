@@ -5,6 +5,18 @@
   font-weight: lighter;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   /* padding: 0px 100px; */
   margin: 0px;
@@ -12,23 +24,27 @@ body {
 
 .navbar-container {
   position: fixed;
-  display: flex;
-  justify-content: space-evenly;
-  /* border: 1px solid black; */
-  box-shadow: 0px 0px 25px #d4c7c7;
-  background-color: white;
-  /* padding: 20px 0px; */
+  top: 0;
+  left: 0;
   width: 100%;
-  gap: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+  background-color: white;
+  box-shadow: 0px 0px 25px #d4c7c7;
+  z-index: 1000;
+  overflow-x: hidden;
 }
 
 .anchors {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 0px;
+  /* padding: 0px 0px; */
   margin: 0px;
   /* position: fixed; */
+
 }
 
 .anchors a {
@@ -46,12 +62,22 @@ body {
   margin: 10px 0px;
   box-shadow: 0px 0px 5px #d4c7c7;
   border-radius: 20px;
+  width: 300px;
+  height: 100%;
+
+}
+
+.cards h4 {
+  text-decoration: none;
+  color: black;
+  list-style: none;
 }
 
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   /* gap: 10px; */
+  margin-top: 40px;
 
 }
 
@@ -80,6 +106,7 @@ body {
 
 .cards h4 {
   text-align: left;
+
 }
 
 #temp1 {
@@ -111,6 +138,7 @@ body {
 .mindCards img {
   height: 200px;
   width: 150px;
+  z-index: -1;
 }
 
 .title {
@@ -121,7 +149,7 @@ body {
 
 .title button {
   /* height: 100px; */
-  padding: 10px 30px;
+  padding: 5px 10px;
   /* width: 200px; */
 }
 
@@ -132,14 +160,286 @@ body {
   gap: 10px;
   /* margin: 0px 10px; */
 }
-.btnSection button{
+
+.btnSection button {
   background-color: white;
   border: 0.5px solid #e9d8d8;
   border-radius: 20px;
   transition: 0.2s;
 }
-.btnSection button:hover{
+
+.btnSection button:hover {
   background-color: rgb(224, 11, 11);
   color: white;
   border: 1px solid rgb(224, 11, 11);
+}
+
+#searchId {
+  padding: 10px 20px;
+  width: 200px;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid #cebdbd;
+}
+
+.navbar-container button {
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid #cebdbd;
+  transition: 0.2s;
+}
+
+.navbar-container button:hover {
+  background-color: rgb(224, 11, 11);
+  color: white;
+}
+
+.cards-container a {
+  text-decoration: none;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 100vw; */
+  /* border: 2px solid black; */
+  /* margin: 20px 100px; */
+}
+
+.Accordian-container {
+  width: 70%;
+  transition: 0.3s;
+}
+
+.acc-header {
+
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 5px;
+  /* border-radius: 10px; */
+  padding: 10px 20px;
+  /* box-shadow: 0px 0px 5px gray; */
+  border-bottom: 12px solid #f0e3e3;
+  /* background-color: #f9f2f2; */
+
+}
+
+.acc-header span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.acc-header :hover {
+  cursor: pointer;
+}
+
+.child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.description {
+  margin: 20px;
+  border-bottom: 1px solid black;
+}
+
+.text p {
+  text-align: left;
+
+}
+
+.image img {
+  height: 100px;
+  width: 130px;
+}
+
+.image button {
+  position: absolute;
+  padding: 0px 10px;
+  /* right: 10px;  */
+  margin-left: -45px;
+  background-color: white;
+  border: 1px solid gray;
+  transition: 0.2s;
+  border-radius: 2px;
+}
+
+.image button:hover {
+  background-color: gray;
+  color: white;
+}
+
+#temp2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4c4949;
+}
+
+#temp3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+#temp4 {
+  color: green;
+}
+
+#temp5 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  color: gray;
+}
+
+.text {
+  padding: 20px 0px;
+}
+
+
+.topperBox{
+  /* padding: 0px 100px; */
+  align-items: flex-start;
+  /* border: 2px solid black; */
+  box-shadow: 0px 4px 10px #d9c4c4;
+  margin: 50px 200px;
+  padding: 20px 20px;
+  border-radius: 20px;
+}
+
+.TextOfTopperBox  {
+  /* justify-self: left; */
+  /* display: inline-block; */
+  /* width: 100%; */
+  /* text-align: left; */
+  /* display: inline; */
+/* margin: 0px; */
+  /* margin: 0px 100px; */
+  font-weight: 600;
+}
+.whole-container{
+  padding: 100px 100px;
+  /* margin: 0px 100px; */
+}
+#temp8{
+  color: rgb(255, 55, 0);
+}
+#temp12{
+  font-weight: 800;
+  font-size: 40px;
+}
+.carousal-div {
+  display: flex;
+  overflow-x: auto;
+  gap: 50px;
+  padding: 50px 0px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  margin: 0px 150px;
+  width: 70%;
+}
+
+.carousal-div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.offer-card {
+  min-width: 300px;
+  padding: 16px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+#temp13{
+  font-weight: 800;
+}
+.offer-card img{
+  height: 30px;
+  width: 30px;
+}
+.offer-card p{
+  /* padding: 0px 10px; */
+  text-align: left;
+}
+#temp14{
+  /* border-left: 1px solid gray; */
+}
+.collection-container{
+  /* background-color: black; */
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.card-text{
+  color: black;
+  font-weight: 600;
+}
+.temp{
+  color: gray;
+  font-style: italic;
+}
+.footer-container{
+  height: 60vh;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding-top: 50px;
+  gap: 80px;
+}
+.logoFooter img{
+  height: 150px;
+  width: 190px;
+}
+#temp20{
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+#temp21{
+  font-size: 18px;
+  color: gray;
+  margin: 20px 0px;
+}
+.commonMargin{
+  margin: 10px 20px;
+  /* transition: 0.3s; */
+}
+.copyright{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.copyright:hover{
+  cursor: pointer;
+}
+.containerOfFooter{
+  padding: 0px;
+  margin: 0px;
+  background-color: rgb(240, 240, 245);
+  border-radius: 50px;
+  
+}
+#temp21:hover{
+  color: black;
+  cursor: pointer;
+}
+.logoFooter p:hover{
+  cursor: pointer;
 }
