@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RestaurantCategory from './RestaurantCategory';
+import Footer from './Footer';
 
 const Menus = () => {
     const { resId } = useParams();
@@ -22,7 +23,7 @@ const Menus = () => {
     if (!resInfo) return <h2 style={{ paddingTop: "120px" }}>Loading...</h2>;
 
     const { text } = resInfo?.cards?.[0]?.card?.card
-    const { itemCards} = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card;
+    const { itemCards } = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card;
     console.log(itemCards)
     const categories = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c => c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
 
@@ -35,7 +36,7 @@ const Menus = () => {
         <div className='whole-container'>
             <div className='topperBox-container'>
                 <div className='topperBox'>
-                    <h1 id='temp12'>{ name}</h1>
+                    <h1 id='temp12'>{name}</h1>
                     <span id='temp11' className='TextOfTopperBox'> ★{avgRatingString} &nbsp;</span>
                     <span id='temp6' className='TextOfTopperBox'> ({totalRatingsString}) </span>
                     <span id='temp7' className='TextOfTopperBox'>  &nbsp; &#x25CF; &nbsp; ({costForTwoMessage})</span>
@@ -48,9 +49,9 @@ const Menus = () => {
                 {/* <h1>Deals For You</h1> */}
                 <div className='carousal-div'>
                     {offers.map((offer, index) => (
-                        
+
                         <div key={index} className='offer-card'>
-                            <img src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic'/>
+                            <img src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic' />
                             <p id='temp13'><span></span><strong>{offer.info.header}</strong></p>
                             <p id='temp14'>{offer.info.couponCode}</p>
                         </div>
@@ -67,6 +68,7 @@ const Menus = () => {
                     />)
                 }
             </div>
+            <Footer />
         </div>
     );
 };

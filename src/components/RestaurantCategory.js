@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ItemList from './ItemList'
+import Footer from './Footer'
 import { ChevronDown } from 'lucide-react';
 const RestaurantCategory = ({ data , showItems, setShowIndex}) => {
 
@@ -24,8 +25,12 @@ const RestaurantCategory = ({ data , showItems, setShowIndex}) => {
           {   showItems &&    <ItemList items={data.itemCards}  />}
             </div>
 
+
         </div>
+       
     )
+    
 }
+
 
 export default RestaurantCategory

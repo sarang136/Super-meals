@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ChevronDown } from 'lucide-react';
+import UserConText from '../Utils/UserContext';
 
 const Footer = () => {
+
+    const {fullNameOfUser} = useContext(UserConText)
     return (
         <div className='containerOfFooter'>
             <div className='footer-container'>
                 <div className='logoFooter'>
                     <img src='https://images-platform.99static.com/ydocSZMPbCuCOxA5hNQLJLs10jY=/500x500/top/smart/99designs-contests-attachments/2/2478/attachment_2478256' />
                     <p>© 2025 Super Meals Limited</p>
+
+                    <p id='temp30'> User : <span style={{fontStyle:"italic",     color: "gray"}}>{fullNameOfUser}</span></p>
                 </div>
 
                 <div className='CompanyContainer commonMargin'>
@@ -53,4 +58,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;
